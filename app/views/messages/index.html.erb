@@ -1,15 +1,19 @@
-<div class="panel panel-default">
+
+<div class = "container-fluid">
+<div class = "row">
+<div class="col-md-6 panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
   </div>
-    
-  <div class="panel-body">
-    <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
-      <br>
-    <% end %>
-  </div>
+        <div class="panel-body" style= "background: url('/assets/board.jpg');">
+        <% @messages.each do |message| %>
+        <span class="label label-info"><%= message.name %></span>
+        <%= message.body %>
+        <br>
+        <% end %>
+        </div>
+</div>
+</div>
 </div>
 
 <%= form_for(@message) do |f| %>
@@ -17,6 +21,6 @@
   <%= f.text_field :name %>
 
   内容:
-  <%= f.text_field :body %>
+  <%= f.text_area(:body, size: "24x6") %>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
