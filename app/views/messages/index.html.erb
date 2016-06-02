@@ -1,5 +1,3 @@
-<div class="panel panel-default">
-
 <div class = "container-fluid">
 <div class = "row">
 <div class="col-md-6 col-md-offset-1 panel panel-default">
@@ -7,7 +5,7 @@
     メッセージ一覧
   </div>
 
-  <div class="panel-body">
+  <div class="panel-body" style= "background: url('/assets/board.jpg');">
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
         <%= message.body %>
@@ -18,12 +16,8 @@
     <% end %>
   </div>
 </div>
-
+</div>
 <%= render 'form' %>
-
-</div>
-
-</div>
 </div>
 
 
